@@ -1,5 +1,5 @@
 import './App.css';
-
+import News from "./components/News"
 import React, { useState } from 'react'
 import {
   BrowserRouter as Router,
@@ -20,7 +20,13 @@ const App = (props) => {
           color='#00ffff'
           progress={progress}
         />
-       
+       <Routes>
+          <Route exact path="/" element={<News setProgress={setProgress} apiKey={apiKey} key="general" country="in" category="general" />} />
+          <Route exact path="/business" element={<News setProgress={setProgress} apiKey={apiKey} key="business" country="in" category="business" />} />
+          <Route exact path="/entertainment" element={<News setProgress={setProgress} apiKey={apiKey} key="entertainment" country="in" category="entertainment" />} />
+          <Route exact path="/general" element={<News setProgress={setProgress} apiKey={apiKey} key="general" country="in" category="general" />} />
+          
+        </Routes>
         
       </Router>
     </div>
